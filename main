@@ -4,6 +4,8 @@ _U.isRGB = true
 _U.isDefault = false
 _U.isCustom = false
 
+_U.CustomColor = nil
+
 if not _U.isRGB and not _U.isDefault and not _U.isCustom then
     _U.isDefault = true
 end
@@ -7086,12 +7088,15 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                             TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
                             {TextColor3 = _U.PrimColor}
                         ):Play()
-                    else
+                    elseif _U.isCustom and not _U.CustomColor and not _U.isRGB and not _U.isDefault then
                         TweenService:Create(
                             Button,
                             TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                            {TextColor3 = _U.CSColor}
+                            {TextColor3 = _U.CustomColor}
                         ):Play()
+                    else
+                        -- Do nothing, this will have a purpose maybe one day...
+                    end
                 end)
                 
                 Button.MouseLeave:Connect(function()
@@ -7172,9 +7177,8 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                     local hsv = Color3.fromHSV(math.clamp(h, 0, 1), math.clamp(s, 0, 1), math.clamp(v, 0, 1))
                     
                     ColorPreview.ImageColor3 = hsv
+                    _U.CustomColor = hsv
                 end)
-
-
             end
             
             function main:AddToggle(text,config,callback)
@@ -7254,6 +7258,69 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                 local toggled = config or false
                 Toggle.MouseButton1Click:Connect(function()
                     if toggled == false then
+                        if _U.isRGB and not _U.isDefault and not _U.isCustom then
+                            spawn(function()
+                                while wait() do
+                                    pcall(function()
+                                        wait(0.1) 
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(255, 155, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(0, 155, 255)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {BackgroundColor3 = Color3.fromRGB(255, 0, 155)}
+                                        ):Play() 
+                                        wait(.5)
+                                    end)
+                                end
+                            end)
+                        elseif _U.isDefault and not _U.isRGB and not _U.isCustom then
+                            TweenService:Create(
+                                ToggleImage2,
+                                TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                                {BackgroundColor3 = _U.PrimColor}
+                            ):Play()
+                        elseif _U.isCustom and not _U.CustomColor and not _U.isRGB and not _U.isDefault then
+                            TweenService:Create(
+                                ToggleImage2,
+                                TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                                {BackgroundColor3 = _U.CustomColor}
+                            ):Play()
+                        else
+                            -- Do nothing, this will have a purpose maybe one day...
+                        end
                         toggled = true
                         ToggleImage2.Visible = true
                         ToggleImage2:TweenSize(UDim2.new(0, 21, 0, 21),"In","Quad",0.1,true)
@@ -7267,6 +7334,69 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                 end)
                 
                 if config == true then
+                    if _U.isRGB and not _U.isDefault and not _U.isCustom then
+                        spawn(function()
+                            while wait() do
+                                pcall(function()
+                                    wait(0.1) 
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
+                                    ):Play() 
+                                    wait(.5)            
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(255, 155, 0)}
+                                    ):Play() 
+                                    wait(.5)            
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}
+                                    ):Play() 
+                                    wait(.5)            
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}
+                                    ):Play() 
+                                    wait(.5)            
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}
+                                    ):Play() 
+                                    wait(.5)            
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(0, 155, 255)}
+                                    ):Play() 
+                                    wait(.5)            
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}
+                                    ):Play() 
+                                    wait(.5)            
+                                    game:GetService('TweenService'):Create(
+                                        ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                        {BackgroundColor3 = Color3.fromRGB(255, 0, 155)}
+                                    ):Play() 
+                                    wait(.5)
+                                end)
+                            end
+                        end)
+                    elseif _U.isDefault and not _U.isRGB and not _U.isCustom then
+                        TweenService:Create(
+                            ToggleImage2,
+                            TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                            {BackgroundColor3 = _U.PrimColor}
+                        ):Play()
+                    elseif _U.isCustom and not _U.CustomColor and not _U.isRGB and not _U.isDefault then
+                        TweenService:Create(
+                            ToggleImage2,
+                            TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                            {BackgroundColor3 = _U.CustomColor}
+                        ):Play()
+                    else
+                        -- Do nothing, this will have a purpose maybe one day...
+                    end
                     ToggleImage2.Visible = true
                     ToggleImage2:TweenSize(UDim2.new(0, 21, 0, 21),"In","Quad",0.1,true)
                     toggled = true
@@ -7416,11 +7546,69 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                     DropButton2.Text = tostring(v)
     
                     DropButton2.MouseEnter:Connect(function()
-                        TweenService:Create(
-                            DropButton2,
-                            TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TextColor3 = _U.PrimColor}
-                        ):Play()
+                        if _U.isRGB and not _U.isDefault and not _U.isCustom then
+                            spawn(function()
+                                while wait() do
+                                    pcall(function()
+                                        wait(0.1) 
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(255, 0, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(255, 155, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(255, 255, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(0, 255, 0)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(0, 255, 255)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(0, 155, 255)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(255, 0, 255)}
+                                        ):Play() 
+                                        wait(.5)            
+                                        game:GetService('TweenService'):Create(
+                                            DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+                                            {TextColor3 = Color3.fromRGB(255, 0, 155)}
+                                        ):Play() 
+                                        wait(.5)
+                                    end)
+                                end
+                            end)
+                        elseif _U.isDefault and not _U.isRGB and not _U.isCustom then
+                            TweenService:Create(
+                                DropButton2,
+                                TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                                {TextColor3 = _U.PrimColor}
+                            ):Play()
+                        elseif _U.isCustom and not _U.CustomColor and not _U.isRGB and not _U.isDefault then
+                            TweenService:Create(
+                                DropButton2,
+                                TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                                {TextColor3 = _U.CustomColor}
+                            ):Play()
+                        else
+                            -- Do nothing, this will have a purpose maybe one day...
+                        end
                     end)
                     DropButton2.MouseLeave:Connect(function()
                         TweenService:Create(
