@@ -32,6 +32,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
     
     local UserInputService = game:GetService("UserInputService")
     local TweenService = game:GetService("TweenService")
+    local RGBTweenService = game:GetService("TweenService")
     
     local function MakeDraggable(topbarobject, object)
         local Dragging = nil
@@ -163,42 +164,42 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
             while wait() do
                 pcall(function()
                     wait(0.1) 
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 155, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 255, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 255, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 255, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 155, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 155)}
                     ):Play() 
@@ -673,42 +674,42 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
                                 while wait() do
                                     pcall(function()
                                         wait(0.1) 
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 0, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 155, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 255, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(0, 255, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(0, 255, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(0, 155, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 0, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 0, 155)}
                                         ):Play() 
@@ -6641,7 +6642,6 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
 
     Misc:AddSeperator("GUI")
 
-    local RGBTweenService = game:GetService("TweenService")
 
     Misc:AddDropdown("Select UI Color",{"Default","RGB","Custom Color"},function(value)
         _G.SelectUIColor = value
@@ -6650,58 +6650,20 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
     Misc:AddButton("Apply changes", function()
         if _G.SelectUIColor == "Default" then
             RGBTweenService:Cancel()
+            
+            _G.isDefault = true
+            _G.isRGB = false
+            _G.isCustom = false
         elseif _G.SelectUIColor == "RGB" then
-            spawn(function()
-                while wait() do
-                    pcall(function()
-                        wait(0.1) 
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 0, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 155, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 255, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(0, 255, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(0, 255, 255)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(0, 155, 255)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 0, 255)}
-                        ):Play() 
-
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 0, 155)}
-                        ):Play() 
-                        wait(.5)
-                    end)
-                end
-            end)
-        elseif _G.SelectUIColor == "Custom Color" then
+            _G.isDefault = false
+            _G.isRGB = true
+            _G.isCustom = false
+        elseif _G.SelectUIColor == "Custom color" then
             RGBTweenService:Cancel()
-            Main.BackgroundColor3 = Color3.fromRGB(69, 69, 69)
+
+            _G.isDefault = false
+            _G.isRGB = false
+            _G.isCustom = true
         end
     end)
 
@@ -6739,6 +6701,7 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
     
     local UserInputService = game:GetService("UserInputService")
     local TweenService = game:GetService("TweenService")
+    local RGBTweenService = game:GetService("TweenService")
     
     local function MakeDraggable(topbarobject, object)
         local Dragging = nil
@@ -6869,42 +6832,42 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
             while wait() do
                 pcall(function()
                     wait(0.1) 
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 155, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 255, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 255, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 255, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 155, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 155)}
                     ):Play() 
@@ -7114,42 +7077,42 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                             while wait() do
                                 pcall(function()
                                     wait(0.1) 
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(255, 0, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(255, 155, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(255, 255, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(0, 255, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(0, 255, 255)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(0, 155, 255)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(255, 0, 255)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {TextColor3 = Color3.fromRGB(255, 0, 155)}
                                     ):Play() 
@@ -7343,42 +7306,42 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                                 while wait() do
                                     pcall(function()
                                         wait(0.1) 
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(255, 155, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(0, 155, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {BackgroundColor3 = Color3.fromRGB(255, 0, 155)}
                                         ):Play() 
@@ -7419,42 +7382,42 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                             while wait() do
                                 pcall(function()
                                     wait(0.1) 
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(255, 155, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(0, 155, 255)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}
                                     ):Play() 
                                     wait(.5)            
-                                    game:GetService('TweenService'):Create(
+                                    RGBTweenService:Create(
                                         ToggleImage2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                         {BackgroundColor3 = Color3.fromRGB(255, 0, 155)}
                                     ):Play() 
@@ -7631,42 +7594,42 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                                 while wait() do
                                     pcall(function()
                                         wait(0.1) 
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 0, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 155, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 255, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(0, 255, 0)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(0, 255, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(0, 155, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 0, 255)}
                                         ):Play() 
                                         wait(.5)            
-                                        game:GetService('TweenService'):Create(
+                                        RGBTweenService:Create(
                                             DropButton2,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                                             {TextColor3 = Color3.fromRGB(255, 0, 155)}
                                         ):Play() 
@@ -9981,6 +9944,7 @@ elseif game.PlaceId == 6329844902 then
     
     local UserInputService = game:GetService("UserInputService")
     local TweenService = game:GetService("TweenService")
+    local RGBTweenService = game:GetService("TweenService")
     
     local function MakeDraggable(topbarobject, object)
         local Dragging = nil
@@ -10111,42 +10075,42 @@ elseif game.PlaceId == 6329844902 then
             while wait() do
                 pcall(function()
                     wait(0.1) 
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 155, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 255, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 255, 0)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 255, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(0, 155, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 255)}
                     ):Play() 
                     wait(.5)            
-                    game:GetService('TweenService'):Create(
+                    RGBTweenService:Create(
                         UserText,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                         {TextColor3 = Color3.fromRGB(255, 0, 155)}
                     ):Play() 
@@ -11016,11 +10980,11 @@ elseif game.PlaceId == 6329844902 then
     end
     
     function fly()
-        local mouse=game.Players.LocalPlayer:GetMouse''
+        local mouse=game.Players.LocalPlayer:GetMouse
         localplayer=game.Players.LocalPlayer
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         local torso = game.Players.LocalPlayer.Character.HumanoidRootPart
-        local speedSET=25
+        local speedSET=30
         local keys={a=false,d=false,w=false,s=false}
         local e1
         local e2
@@ -11993,8 +11957,6 @@ elseif game.PlaceId == 6329844902 then
 
     Misc:AddSeperator("GUI")
 
-    local RGBTweenService = game:GetService("TweenService")
-
     Misc:AddDropdown("Select UI Color",{"Default","RGB","Custom Color"},function(value)
         _G.SelectUIColor = value
     end)
@@ -12002,58 +11964,20 @@ elseif game.PlaceId == 6329844902 then
     Misc:AddButton("Apply changes", function()
         if _G.SelectUIColor == "Default" then
             RGBTweenService:Cancel()
-        elseif _G.SelectUIColor == "RGB" then
-            spawn(function()
-                while wait() do
-                    pcall(function()
-                        wait(0.1) 
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 0, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 155, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 255, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(0, 255, 0)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(0, 255, 255)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(0, 155, 255)}
-                        ):Play() 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 0, 255)}
-                        ):Play() 
 
-                        wait(.5)            
-                        RGBTweenService:Create(
-                            Main,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                            {MainBackgroundColor3 = Color3.fromRGB(255, 0, 155)}
-                        ):Play() 
-                        wait(.5)
-                    end)
-                end
-            end)
+            _G.isDefault = true
+            _G.isRGB = false
+            _G.isCustom = false
+        elseif _G.SelectUIColor == "RGB" then
+            _G.isDefault = false
+            _G.isRGB = true
+            _G.isCustom = false
         elseif _G.SelectUIColor == "Custom color" then
             RGBTweenService:Cancel()
-            Main.BackgroundColor3 = Color3.fromRGB(69, 69, 69)
+
+            _G.isDefault = false
+            _G.isRGB = false
+            _G.isCustom = true
         end
     end)
 else
