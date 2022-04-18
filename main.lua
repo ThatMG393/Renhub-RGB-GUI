@@ -1,20 +1,19 @@
-_G.Color = Color3.fromRGB(255,0,0) --> Walk on water platform color
-
-_G.isRGB = true
-_G.isDefault = false
-_G.isCustom = false
-
-_G.CustomColor = nil
-
-_G.DefColor = Color3.fromRGB(30, 28, 39)
-_G.DefRed = Color3.fromRGB(255, 0, 0)
-
-
-if not _G.isRGB and not _G.isDefault and not _G.isCustom then
-    _G.isDefault = true
-end
-
 if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
+
+    _G.Color = Color3.fromRGB(255,0,0) --> Walk on water platform color
+
+    _G.isRGB = true
+    _G.isDefault = false
+    _G.isCustom = false
+
+    _G.CustomColor = nil
+
+    _G.DefColor = Color3.fromRGB(30, 28, 39)
+    _G.DefRed = Color3.fromRGB(255, 0, 0)
+
+    if not _G.isRGB and not _G.isDefault and not _G.isCustom then
+        _G.isDefault = true
+    end
 
     if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
     
