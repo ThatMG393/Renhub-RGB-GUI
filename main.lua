@@ -1,6 +1,6 @@
 if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
 
-    _G.Color = Color3.fromRGB(255,0,0) --> Walk on water platform color
+    _G.PlatfromColor = Color3.fromRGB(255,0,0) --> Walk on water platform color
 
     _G.isRGB = true
     _G.isDefault = false
@@ -6586,7 +6586,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
                             Water.Size = Vector3.new(15,0.5,15)
                             Water.Anchored = true
                             Water.Material = "Neon"
-                            Water.Color = _G.Color
+                            Water.Color = _G.PlatfromColor
                             game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
                         else
                             game:GetService("Workspace").Water.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.X,game:GetService("Workspace").Camera["Water;"].CFrame.Y,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Z)
@@ -6707,7 +6707,20 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
 
 elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId == 5931540094 or game.PlaceId == 5931540094 then
 
-    _G.Color = Color3.fromRGB(255,0,0) --> Walk on water platform color
+    _G.PlatfromColor = Color3.fromRGB(255,0,0) --> Walk on water platform color
+
+    _G.isRGB = true
+    _G.isDefault = false
+    _G.isCustom = false
+
+    _G.CustomColor = nil
+
+    _G.DefColor = Color3.fromRGB(30, 28, 39)
+    _G.DefRed = Color3.fromRGB(255, 0, 0)
+
+    if not _G.isRGB and not _G.isDefault and not _G.isCustom then
+        _G.isDefault = true
+    end
 
     if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
     
@@ -8016,7 +8029,7 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
     Toggle.Size = UDim2.new(0, 50, 0, 50)
     Toggle.Font = Enum.Font.Code
     Toggle.Text = "R"
-    Toggle.TextColor3 = _G.
+    Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
     Toggle.TextScaled = true
     Toggle.MouseButton1Down:connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
@@ -9936,7 +9949,20 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
     end)
 elseif game.PlaceId == 6329844902 then
 
-    _G.Color = Color3.fromRGB(255,0,0) --> Walk on water platform color
+    _G.PlatfromColor = Color3.fromRGB(255,0,0) --> Walk on water platform color
+
+    _G.isRGB = true
+    _G.isDefault = false
+    _G.isCustom = false
+
+    _G.CustomColor = nil
+
+    _G.DefColor = Color3.fromRGB(30, 28, 39)
+    _G.DefRed = Color3.fromRGB(255, 0, 0)
+
+    if not _G.isRGB and not _G.isDefault and not _G.isCustom then
+        _G.isDefault = true
+    end
 
     if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
     
