@@ -9,9 +9,142 @@ _G.CustomColor = Color3.fromRGB(255, 0, 0)
 local UserInputService = game:GetService("UserInputService")
 local RGBTweenService = game:GetService("TweenService")
 
-local UI = {}
+local Threading = {}
+local function TC3(GUIObject)
+    while true do
+        wait(0.1) 
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(255, 0, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(255, 155, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(255, 255, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(0, 255, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(0, 255, 255)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(0, 155, 255)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(255, 0, 255)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(255, 0, 155)}
+        ):Play() 
+        wait(.5)
+    end
+end
 
-function UI:makeWindowDraggable(topObject, mainObject)
+local function BG3(GUIObject)
+    while true do
+        wait(0.1) 
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(255, 155, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(0, 155, 255)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}
+        ):Play() 
+        wait(.5)            
+        RGBTweenService:Create(
+            GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+            {BackgroundColor3 = Color3.fromRGB(255, 0, 155)}
+        ):Play() 
+        wait(.5)
+    end
+end
+
+function Threading:textColorThread(GUIObject)
+    local curThr = {}
+
+    function curThr:create()
+        local curCo = {}
+        local coRGB = coroutine.create(TC3())
+
+        function curCo:Run()
+            coroutine.resume(coRGB, GUIObject)
+        end
+
+        function curCo:Stop()
+            coroutine.close(coRGB)
+        end
+
+        return curCo
+    end
+    return curThr
+end
+
+function Threading:backgroundRGBThread(GUIObject)
+    local curThr = {}
+
+    function curThr:create()
+        local curCo = {}
+        local coRGB = coroutine.create(BG3())
+
+        function curCo:Run()
+            coroutine.resume(coRGB, GUIObject)
+        end
+
+        function curCo:Stop()
+            coroutine.close(coRGB)
+        end
+
+        return curCo
+    end
+    return curThr
+end
+
+local GUI = {}
+
+function GUI:makeWindowDraggable(topObject, mainObject)
     local Dragging = nil
     local DragInput = nil
     local DragStart = nil
@@ -64,7 +197,7 @@ function UI:makeWindowDraggable(topObject, mainObject)
         end)
 end
 
-function UI:createWindow(hubNameText, kbind)
+function GUI:createWindow(hubNameText, kbind)
     local isUIHidden = true
     local ff = false
 
@@ -390,141 +523,6 @@ function UI:createWindow(hubNameText, kbind)
 return curWin
 end
 
-function Threading()
-    local function TC3(GUIObject)
-        while true do
-            wait(0.1) 
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(255, 0, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(255, 155, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(255, 255, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(0, 255, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(0, 255, 255)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(0, 155, 255)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(255, 0, 255)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {TextColor3 = Color3.fromRGB(255, 0, 155)}
-            ):Play() 
-            wait(.5)
-        end
-    end
-
-    local function BG3(GUIObject)
-        while true do
-            wait(0.1) 
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(255, 155, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(0, 155, 255)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}
-            ):Play() 
-            wait(.5)            
-            RGBTweenService:Create(
-                GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
-                {BackgroundColor3 = Color3.fromRGB(255, 0, 155)}
-            ):Play() 
-            wait(.5)
-        end
-    end
-
-    function Threading:textColorThread(GUIObject)
-        local curThr = {}
-
-        function curThr:create()
-            local curCo = {}
-            local coRGB = coroutine.create(TC3())
-
-            function curCo:Run()
-                coroutine.resume(coRGB, GUIObject)
-            end
-
-            function curCo:Stop()
-                coroutine.close(coRGB)
-            end
-
-            return curCo
-        end
-        return curThr
-    end
-
-    function Threading:backgroundRGBThread(GUIObject)
-        local curThr = {}
-
-        function curThr:create()
-            local curCo = {}
-            local coRGB = coroutine.create(BG3())
-
-            function curCo:Run()
-                coroutine.resume(coRGB, GUIObject)
-            end
-
-            function curCo:Stop()
-                coroutine.close(coRGB)
-            end
-
-            return curCo
-        end
-        return curThr
-    end
-end
-
-
 -- if game.PlaceId == gamePlaceIds[0] or game.PlaceId == gamePlaceIds[1] or game.PlaceId == gamePlaceIds[2] then
 --
 -- end
@@ -536,8 +534,8 @@ if true then
             gui.Destroy()
         end
     end
-    
-    local Main = UI:createWindow("Test | BF", Enum.KeyCode.RightControl)
+
+    local Main = GUI:createWindow("MG Hub | BF")
 
     local TestTab = Main:addTab("Test tab", "6026568198")
     local TestTabButton = TestTab:addButton("Click me!", function()
