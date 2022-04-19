@@ -11,7 +11,7 @@ local TweenService = game:GetService("TweenService")
 local RGBTweenService = game:GetService("TweenService")
 
 local Threading = {}
-local function TC3(GUIObject)
+local TC3 = function(GUIObject)
     while true do
         wait(0.1) 
         RGBTweenService:Create(
@@ -57,7 +57,7 @@ local function TC3(GUIObject)
     end
 end
 
-local function BG3(GUIObject)
+local BG3 = function(GUIObject)
     while true do
         wait(0.1) 
         RGBTweenService:Create(
@@ -108,7 +108,7 @@ function Threading:textColorThread()
 
     function curThr:create(GUIObject)
         local curCo = {}
-        local coRGB = coroutine.create(TC3())
+        local coRGB = coroutine.create(TC3)
 
         function curCo:Run()
             coroutine.resume(coRGB, GUIObject)
@@ -128,7 +128,7 @@ function Threading:backgroundRGBThread()
 
     function curThr:create(GUIObject)
         local curCo = {}
-        local coRGB = coroutine.create(BG3())
+        local coRGB = coroutine.create(BG3)
 
         function curCo:Run()
             coroutine.resume(coRGB, GUIObject)
