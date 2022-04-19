@@ -1,3 +1,5 @@
+
+
 if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
 
     _G.PlatfromColor = Color3.fromRGB(255,0,0) --> Walk on water platform color
@@ -734,11 +736,15 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
                         end
                     end)
                     DropButton2.MouseLeave:Connect(function()
-                        TweenService:Create(
-                            DropButton2,
-                            TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TextColor3 = Color3.fromRGB(225, 225, 225)}
-                        ):Play()
+                        if _G.isRGB and not _G.isCustom and not _G.isDefault then
+                            RGBTweenService:Cancel()
+                        else
+                            TweenService:Create(
+                                DropButton2,
+                                TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                                {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}
+                            ):Play()
+                        end
                     end)
     
                     DropButton2.MouseButton1Click:Connect(function()
@@ -6667,7 +6673,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
         end
     end)
 
-elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId == 5931540094 or game.PlaceId == 5931540094 then
+elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId == 5931540094 then
 
     _G.PlatfromColor = Color3.fromRGB(255,0,0) --> Walk on water platform color
 
@@ -7138,11 +7144,15 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                 end)
                 
                 Button.MouseLeave:Connect(function()
-                    TweenService:Create(
-                        Button,
-                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                        {TextColor3 = Color3.fromRGB(225, 225, 225)}
-                    ):Play()
+                    if _G.isRGB and not _G.isCustom and not _G.isDefault then
+                        RGBTweenService:Cancel()
+                    else
+                        TweenService:Create(
+                            Button,
+                            TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                            {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}
+                        ):Play()
+                    end
                 end)
                 
                 Button.MouseButton1Click:Connect(function()
@@ -7291,11 +7301,15 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                 end)
     
                 Toggle.MouseLeave:Connect(function()
-                    TweenService:Create(
-                        ToggleLabel,
-                        TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                        {TextColor3 = Color3.fromRGB(225, 225, 225)}
-                    ):Play()
+                    if _G.isRGB and not _G.isCustom and not _G.isDefault then
+                        RGBTweenService:Cancel()
+                    else
+                        TweenService:Create(
+                            Toggle,
+                            TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                            {BackgroundColor3 = Color3.fromRGB(225, 225, 225)}
+                        ):Play()
+                    end
                 end)
                 if config == nil then config = false end
                 local toggled = config or false
@@ -7654,11 +7668,15 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
                         end
                     end)
                     DropButton2.MouseLeave:Connect(function()
-                        TweenService:Create(
-                            DropButton2,
-                            TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TextColor3 = Color3.fromRGB(225, 225, 225)}
-                        ):Play()
+                        if _G.isRGB and not _G.isCustom and not _G.isDefault then
+                            RGBTweenService:Cancel()
+                        else
+                            TweenService:Create(
+                                DropButton2,
+                                TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
+                                {BackgroundColor3 = Color3.fromRGB(225, 225, 225)}
+                            ):Play()
+                        end
                     end)
     
                     DropButton2.MouseButton1Click:Connect(function()
