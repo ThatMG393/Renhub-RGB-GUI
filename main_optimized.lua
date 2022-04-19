@@ -130,7 +130,7 @@ function UI:createWindow(hubNameText, kbind)
     UserText.Size = UDim2.new(0, 80, 0, 20)
     UserText.Font = Enum.Font.Gotham
     UserText.Text = tostring(game.Players.LocalPlayer.Name)
-    Threading:newTCRGBThread(UserText)
+    Threading:textColorThread(UserText):create():Run()
     UserText.TextScaled = true
     UserText.TextSize = 11.000
     UserText.TextWrapped = true
@@ -530,6 +530,13 @@ end
 -- end
 
 if true then
+    do
+        local gui = game.CoreGui:FindFirstChild("")
+        if gui then
+            gui.Destroy()
+        end
+    end
+    
     local Main = UI:createWindow("Test | BF", Enum.KeyCode.RightControl)
 
     local TestTab = Main:addTab("Test tab", "6026568198")
