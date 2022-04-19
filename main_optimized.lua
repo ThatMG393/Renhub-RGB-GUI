@@ -7,6 +7,7 @@ _G.isCustom = false
 _G.CustomColor = Color3.fromRGB(255, 0, 0)
 
 local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
 local RGBTweenService = game:GetService("TweenService")
 
 local Threading = {}
@@ -102,10 +103,10 @@ local function BG3(GUIObject)
     end
 end
 
-function Threading:textColorThread(GUIObject)
+function Threading:textColorThread()
     local curThr = {}
 
-    function curThr:create()
+    function curThr:create(GUIObject)
         local curCo = {}
         local coRGB = coroutine.create(TC3())
 
@@ -122,10 +123,10 @@ function Threading:textColorThread(GUIObject)
     return curThr
 end
 
-function Threading:backgroundRGBThread(GUIObject)
+function Threading:backgroundRGBThread()
     local curThr = {}
 
-    function curThr:create()
+    function curThr:create(GUIObject)
         local curCo = {}
         local coRGB = coroutine.create(BG3())
 
@@ -263,7 +264,7 @@ function GUI:createWindow(hubNameText, kbind)
     UserText.Size = UDim2.new(0, 80, 0, 20)
     UserText.Font = Enum.Font.Gotham
     UserText.Text = tostring(game.Players.LocalPlayer.Name)
-    Threading:textColorThread(UserText):create():Run()
+    Threading:textColorThread():create(UserText):Run()
     UserText.TextScaled = true
     UserText.TextSize = 11.000
     UserText.TextWrapped = true
@@ -313,7 +314,7 @@ function GUI:createWindow(hubNameText, kbind)
     TabFolder.Name = "TabFolder"
     TabFolder.Parent = MainFrame
 
-    UI:makeWindowDraggable(TopFrame, MainFrame)
+    GUI:makeWindowDraggable(TopFrame, MainFrame)
 
     UserInputService.InputBegan:Connect(function(input)
         if input.KeyCode == kbind then
@@ -454,7 +455,7 @@ function GUI:createWindow(hubNameText, kbind)
             ButtonCorner.CornerRadius = UDim.new(0, 5)
             ButtonCorner.Parent = Button
 
-            local btnTweenRGB = Threading:textColorThread(Button):create()
+            local btnTweenRGB = Threading:textColorThread():create(Button)
             
             Button.MouseEnter:Connect(function()
                 if _G.isRGB then
