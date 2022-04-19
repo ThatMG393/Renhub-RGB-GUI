@@ -192,8 +192,10 @@ function UI()
                 end
             end
         end)
+
+        local curWin = {}
         
-        function UI.createWindow:addTab(tabName, tabIcon)
+        function curWin:addTab(tabName, tabIcon)
             local PageButton = Instance.new("TextButton")
             PageButton.Name = "PageButton"
             PageButton.Parent = ScrollPage
@@ -296,7 +298,9 @@ function UI()
                 end)
             end)
 
-            function UI.createWindow.addTab:addButton(buttonText, buttonCallback)
+            local curTab = {}
+
+            function curTab:addButton(buttonText, buttonCallback)
                 local Button = Instance.new("TextButton")
                 Button.Name = "Button"
                 Button.Parent = ScrollTab
@@ -316,11 +320,11 @@ function UI()
                 ButtonCorner.CornerRadius = UDim.new(0, 5)
                 ButtonCorner.Parent = Button
 
-                local btnTweenRGB = nil
+                local btnTweenRGB = Threading:textColorThread(Button):create()
                 
                 Button.MouseEnter:Connect(function()
                     if _G.isRGB then
-                        btnTweenRGB = Threading:newTCRGBThread(Button)
+                        btnTweenRGB:Run()
                     elseif _G.isDefault then
                         TweenService:Create(
                             Button,
@@ -338,8 +342,7 @@ function UI()
                 
                 Button.MouseLeave:Connect(function()
                     if _G.isRGB then
-                        btnTweenRGB:Disconnect()
-
+                        btnTweenRGB:Stop()
                         TweenService:Create(
                             Button,
                             TweenInfo.new(0.4,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -371,99 +374,153 @@ function UI()
                 end)
             end
 
-            function UI.createWindow.addTab:addToggle()
+            function curTab:addToggle()
             
             end
             
-            function UI.createWindow.addTab:addDropdown()
+            function curTab:addDropdown()
+            
+            end
+            function curTab:addColorPicker()
                 
             end
-            function UI.createWindow.addTab:addColorPicker()
-                
-            end
+        return curTab
         end
+    return curWin
     end
 end
 
 function Threading()
-    function Threading:newTCRGBThread(GUIObject)
-        local UserRGBThread = coroutine.create(function ()
+    local function TC3(GUIObject)
+        while true do
+            wait(0.1) 
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(255, 0, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(255, 155, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(255, 255, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(0, 255, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(0, 255, 255)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(0, 155, 255)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(255, 0, 255)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {TextColor3 = Color3.fromRGB(255, 0, 155)}
-            ):Play()
-        end)
-        UserRGBThread.resume()
-
-        return UserRGBThread
+            ):Play() 
+            wait(.5)
+        end
     end
 
-    function Threading:newBGRGBThread(GUIObject)
-        local UserRGBThread = coroutine.create(function ()
+    local function BG3(GUIObject)
+        while true do
+            wait(0.1) 
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(255, 155, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(0, 155, 255)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}
-            ):Play()
+            ):Play() 
+            wait(.5)            
             RGBTweenService:Create(
                 GUIObject,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
                 {BackgroundColor3 = Color3.fromRGB(255, 0, 155)}
-            ):Play()
-        end)
-        UserRGBThread.resume()
+            ):Play() 
+            wait(.5)
+        end
+    end
 
-        return UserRGBThread
+    function Threading:textColorThread(GUIObject)
+        local curThr = {}
+
+        function curThr:create()
+            local curCo = {}
+            local coRGB = coroutine.create(TC3())
+
+            function curCo:Run()
+                coroutine.resume(coRGB, GUIObject)
+            end
+
+            function curCo:Stop()
+                coroutine.close(coRGB)
+            end
+
+            return curCo
+        end
+        return curThr
+    end
+
+    function Threading:backgroundRGBThread(GUIObject)
+        local curThr = {}
+
+        function curThr:create()
+            local curCo = {}
+            local coRGB = coroutine.create(BG3())
+
+            function curCo:Run()
+                coroutine.resume(coRGB, GUIObject)
+            end
+
+            function curCo:Stop()
+                coroutine.close(coRGB)
+            end
+
+            return curCo
+        end
+        return curThr
     end
 end
 
@@ -474,9 +531,9 @@ end
 
 if true then
     local Main = UI:createWindow("Test | BF", Enum.KeyCode.RightShift)
-    local s = Main:addTab("Test", "6026568198")
 
-    s:addButton("Test Button", function()
-        
+    local TestTab = Main:addTab("Test tab", "6026568198")
+    local TestTabButton = TestTab:addButton("Click me!", function()
+        warn("I've been clicked!")
     end)
 end
