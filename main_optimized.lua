@@ -145,7 +145,7 @@ end
 
 local GUI = {}
 
-function GUI:makeWindowDraggable(topObject, mainObject)
+function GUI.makeWindowDraggable(topObject, mainObject)
     local Dragging = nil
     local DragInput = nil
     local DragStart = nil
@@ -198,7 +198,7 @@ function GUI:makeWindowDraggable(topObject, mainObject)
         end)
 end
 
-function GUI:createWindow(hubNameText, kbind)
+function GUI.createWindow(hubNameText, kbind)
     local isUIHidden = true
     local ff = false
 
@@ -505,7 +505,7 @@ function GUI:createWindow(hubNameText, kbind)
                     Button,
                     TweenInfo.new(0.4,Enum.EasingStyle.Back,Enum.EasingDirection.Out),
                     {TextSize = 11}
-                ):Play()
+                ):Play() 
             end)
         end
 
@@ -530,13 +530,13 @@ end
 
 if true then
     do
-        local gui = game.CoreGui:FindFirstChild("")
+        local gui = game.CoreGui:FindFirstChild("MainScreenGUI")
         if gui then
             gui.Destroy()
         end
     end
 
-    local Main = GUI:createWindow("MG Hub | BF")
+    local Main = GUI.createWindow("MG Hub | BF")
 
     local TestTab = Main:addTab("Test tab", "6026568198")
     local TestTabButton = TestTab:addButton("Click me!", function()
